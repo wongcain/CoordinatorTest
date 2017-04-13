@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toolbar_button_padding">10dp</dimen>
+    <dimen name="collapse_height">500dp</dimen>
+    <dimen name="margins">20dp</dimen>
+</resources>

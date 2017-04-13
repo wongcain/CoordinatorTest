@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:fitsSystemWindows="true"
+    android:id="@+id/main_conttainer">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_coord"
+        >
+        <FrameLayout
+            android:id="@+id/tab_coord_background_image_container"
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
+            <ImageView
+                android:id="@+id/tab_coord_background_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/chuck_norris"
+                android:scaleType="fitStart"
+                />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/detail_main_grandient"
+                android:scaleType="fitXY"/>
+
+        </FrameLayout>
+
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/tab_coord_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppToolbarTheme"
+            android:background="@color/colorTransparent"
+            >
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/tab_coord_collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                android:fitsSystemWindows="true"
+                app:contentScrim="@color/colorTransparent"
+                app:expandedTitleGravity="bottom|center_horizontal"
+                app:collapsedTitleGravity="center_horizontal"
+                >
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/tab_coord_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    android:paddingStart="@dimen/toolbar_button_padding"
+                    android:paddingEnd="@dimen/toolbar_button_padding"
+                    >
+
+                    <ImageView
+                        android:id="@+id/tab_coord_add_friends_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start|center_vertical"
+                        android:src="@drawable/add_friends"/>
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_coord_tabs"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tabGravity="center"
+                app:tabMode="scrollable"
+                android:gravity="bottom"
+                style="@style/AppTabLayout"/>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/tab_coord_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"/>
+
+                <TextView
+                    android:id="@+id/overlay_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:background="@color/colorRed"
+                    android:text="OVERLAYING COORDINATOR"
+                    android:alpha="0.90"/>
+
+                <android.support.v4.widget.Space
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>
